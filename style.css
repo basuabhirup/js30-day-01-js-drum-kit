@@ -12,10 +12,17 @@ body,html {
 
 .keys {
   display: flex;
+  flex-flow: row;
   flex: 1;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .keys {
+    flex-direction: column;
+  }
 }
 
 .key {
@@ -54,4 +61,25 @@ kbd {
   text-transform: uppercase;
   letter-spacing: .1rem;
   color: #ffc600;
+}
+
+.attribution {
+  display: block;
+  background-color: black;
+  color: #ffc600;
+  text-align: center;
+  font-family: monospace;
+  margin: 5rem auto 0;
+  padding: 0.75rem 0;
+  font-size: 1.2rem;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #eea400;
+}
+
+.attribution a:hover {
+  cursor: pointer;
+  color: #ffe800
 }

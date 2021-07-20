@@ -5,6 +5,16 @@ window.addEventListener("keydown", function(event) {
 })
 
 
+// Adding handler function against any "click" on the drum key buttons:
+for (var i = 0; i < document.querySelectorAll(".key").length; i++) {
+  document.querySelectorAll(".key")[i].addEventListener("click", function() {
+    var key = this.getAttribute("data-key");
+    playSound(key);
+    animateKey(key);
+  })
+}
+
+
 // Defining playSound custom function:
 function playSound(keyCode) {
   var sound = document.querySelector(`audio[data-key="${keyCode}"]`);
